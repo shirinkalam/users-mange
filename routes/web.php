@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-        auth()->user()->givePermissionsTo(['delete posts','delete users']);
+    dd(auth()->user()->can('delete posts'));
     return view('welcome');
 })->name('home');
 
