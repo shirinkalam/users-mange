@@ -18,8 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    dd(auth()->user()->can('delete posts'));
-    return view('welcome');
+    auth()->user()->giveRolesTo('teacher');
 })->name('home');
 
 Route::prefix('auth')->namespace('Auth')->group(function () {

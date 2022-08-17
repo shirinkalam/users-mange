@@ -44,10 +44,10 @@ class LoginController extends Controller
 
         $user = $this->getUser($request);
 
-        if($user->hasTwoFactor()){
-            $this->twoFactor->requestCode($user);
-            return $this->sendHasTwoFactorResponse();
-        }
+        // if($user->hasTwoFactor()){
+        //     $this->twoFactor->requestCode($user);
+        //     return $this->sendHasTwoFactorResponse();
+        // }
         #login
         Auth::login($user,$request->remember);
         #redirect

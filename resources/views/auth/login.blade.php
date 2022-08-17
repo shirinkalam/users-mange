@@ -30,7 +30,7 @@
 
 
     <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">  @lang('auth.remember me')</label><br>
-    <a href="{{route('auth.password.forget.form')}}">@lang('auth.forget your password')</a>
+    {{-- <a href="{{route('auth.password.forget.form')}}">@lang('auth.forget your password')</a> --}}
 
     @include('partials.recaptcha')
 
@@ -43,12 +43,12 @@
     </div>
 
     <div>
-        <a class="magic-btn" href="{{route('auth.magic.login.form')}}">
+        {{-- <a class="magic-btn" href="{{route('auth.magic.login.form')}}"> --}}
             <small>@lang('auth.login with magic link')</small>
         </a>
     </div><br>
 
-    <a class="google-btn" href="{{route('auth.login.provider.redirect','google')}}" class="">@lang('auth.login with google')</a><br>
+    {{-- <a class="google-btn" href="{{route('auth.login.provider.redirect','google')}}" class="">@lang('auth.login with google')</a><br> --}}
     <br><button type="submit">@lang('auth.sign in')</button><br>
 
   </form>

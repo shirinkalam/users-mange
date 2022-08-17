@@ -2,9 +2,10 @@
 namespace App\Services\Permission\Traits ;
 
 use App\Models\Permission;
+use App\Models\Role;
 use Illuminate\Support\Arr;
 
-trait HasPermission
+trait HasPermissions
 {
     #Relation
     public function permissions()
@@ -57,4 +58,6 @@ trait HasPermission
         #Checking whether there is permission in the name column or not
         return $this->permissions->contains($permission);
     }
+
+
 }

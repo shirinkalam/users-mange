@@ -18,7 +18,7 @@
         <div>
 
         </div>
-        @if (Auth::user()->hasTwoFactor())
+        {{-- @if (Auth::user()->hasTwoFactor()) --}}
         <div>
             <div>
                 <small>
