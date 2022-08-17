@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    auth()->user()->giveRolesTo('teacher');
+    auth()->user()->withdrawRoles('teacher');
 })->name('home');
 
 Route::prefix('auth')->namespace('Auth')->group(function () {

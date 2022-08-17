@@ -35,29 +35,29 @@ trait HasRoles
         }
 
         #Withdraw roles from the user
-        // public function withdrawRoles(...$roles)
-        // {
-        //     $roles = $this->getAllRoles($roles);
+        public function withdrawRoles(...$roles)
+        {
+            $roles = $this->getAllRoles($roles);
 
-        //     $this->roles()->detach($roles);
+            $this->roles()->detach($roles);
 
-        //     return $this;
-        // }
+            return $this;
+        }
 
         #reset roles and add new role
-        // public function refreshPemissions(...$roles)
-        // {
-        //     $roles = $this->getAllRoles($roles);
+        public function refreshRoles(...$roles)
+        {
+            $roles = $this->getAllRoles($roles);
 
-        //     $this->roles()->sync($roles);
+            $this->roles()->sync($roles);
 
-        //     return $this;
-        // }
+            return $this;
+        }
 
         #Checking the user has that roles or not
-        // public function hasRole(Role $role)
-        // {
-        //     #Checking whether there is role in the name column or not
-        //     return $this->roles->contains($role);
-        // }
+        public function hasRole(Role $role)
+        {
+            #Checking whether there is role in the name column or not
+            return $this->roles->contains($role);
+        }
 }
