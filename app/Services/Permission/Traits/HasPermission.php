@@ -51,7 +51,7 @@ trait HasPermission
         return $this;
     }
 
-    #Checking the user has that permission or not
+    #Checking the user has that permissions or not
     public function hasPermission(Permission $permission)
     {
         #Checking whether there is permission in the name column or not
