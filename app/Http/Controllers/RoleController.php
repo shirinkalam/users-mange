@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class RoleController extends Controller
 
         Role::create($request->only('name','persian_name'));
 
-        return back()->with('success');
+        return back()->with('success',true);
     }
 
     protected function validateForm($request)
@@ -28,5 +29,23 @@ class RoleController extends Controller
             'name'=>['required'],
             'persian_name'=>['required'],
         ]);
+    }
+
+    public function edit(Role $role)
+    {
+        $permissions = Permission::all();
+        $role->load('permissions');
+        return view('roles.edit',compact('permissions','role'));
+    }
+
+    public function update(Request $request ,Role $role)
+    {
+        $this->validateForm($request);
+
+        $role->update($request->only('name','persian_name'));
+
+        $role->refreshPermissions($request->permissions);
+
+        return back()->with('success',true);
     }
 }

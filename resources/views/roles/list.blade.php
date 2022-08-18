@@ -39,7 +39,7 @@
                 <td>{{$role->name}}</td>
                 <td>{{$role->persian_name}}</td>
 
-                <td><a href=""><i class="fas fa-edit"></i></a></td>
+                <td><a href="{{route('roles.edit',$role->id)}}"><i class="fas fa-edit"></i></a></td>
 
                 </td>
              </tr>
