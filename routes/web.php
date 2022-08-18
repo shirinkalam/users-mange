@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
@@ -35,5 +36,6 @@ Route::prefix('panel')->group(function(){
     Route::get('users',[UserController::class,'index'])->name('users.index');
     Route::get('users/{user}/edit',[UserController::class,'edit'])->name('users.edit');
     Route::post('users/{user}/edit',[UserController::class,'update'])->name('users.update');
-
+    Route::get('roles',[RoleController::class,'index'])->name('roles.index');
+    Route::post('roles',[RoleController::class,'store'])->name('roles.store');
 });

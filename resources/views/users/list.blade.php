@@ -7,9 +7,9 @@
 @section('content')
 @auth
 <div>
-    <table cellspacing="0" cellpadding="0" class="user-table">
+    <table cellspacing="0" cellpadding="0" class="table">
         <thead>
-           <tr id="user-table-top">
+           <tr id="table-top">
             <th>
                 <h3>@lang('users.name')</h3>
              </th>

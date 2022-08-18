@@ -1,8 +1,11 @@
 <?php
 
 return [
-    'name' =>'نام',
+    'name' =>'نام نقش',
+    'persian name' =>'نام فارسی نقش',
+    'operation' =>'عملیات',
     'email'=>'ایمیل',
+    'add'=>'افزودن',
     'role'=>'نقش',
     'delete'=>'حذف',
     'edit'=>'ویرایش',
