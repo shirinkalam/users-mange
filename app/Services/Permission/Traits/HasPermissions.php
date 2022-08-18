@@ -43,7 +43,7 @@ trait HasPermissions
     }
 
     #reset Permissions and add new permission
-    public function refreshPemissions(...$permissions)
+    public function refreshPermissions(...$permissions)
     {
         $permissions = $this->getAllPermissions($permissions);
 
@@ -56,8 +56,15 @@ trait HasPermissions
     public function hasPermission(Permission $permission)
     {
         #Checking whether there is permission in the name column or not
-        return $this->permissions->contains($permission);
+        return $this->hasPermissionsThroughRole($permission) || $this->permissions->contains($permission);
     }
 
-
+    #Checking permission through user role
+    protected function hasPermissionsThroughRole(Permission $permission)
+    {
+        foreach($permission->roles as $role){
+            if($this->roles->contains($role)) return true;
+        }
+        return false;
+    }
 }

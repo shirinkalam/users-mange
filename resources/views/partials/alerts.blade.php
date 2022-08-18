@@ -1,12 +1,12 @@
 @if (session('success'))
 <div class="alert alert-success">
-    عملیات با موفقیت انجام شد
+    @lang('users.success')
 </div>
 @endif
 
 @if (session('failed'))
 <div class="alert alert-danger">
-    عملیات با شکست مواجه شد
+    @lang('users.failed')
 </div>
 @endif
 
@@ -52,44 +52,5 @@
 </div>
 @endif
 
-@if (session('magicLinkSent'))
-<div class="alert alert-success">
-    @lang('auth.magic link sent')
-</div>
-@endif
 
-@if (session('invalidToken'))
-<div class="alert alert-danger">
-    @lang('auth.invalid token')
-</div>
-@endif
 
-@if (session('cantSentCode'))
-<div class="alert alert-danger">
-    @lang('auth.cant sent code')
-</div>
-@endif
-
-@if (session('invalidCode'))
-<div class="alert alert-danger">
-    @lang('auth.invalid code')
-</div>
-@endif
-
-@if (session('twoFactorActivated'))
-<div class="alert alert-success">
-    @lang('auth.two factor acticvated')
-</div>
-@endif
-
-@if (session('twoFactorDeactivated'))
-<div class="alert alert-success">
-    @lang('auth.twoFactorDeactivated')
-</div>
-@endif
-
-@if (session('codeResent'))
-<div class="alert alert-success">
-    @lang('auth.codeResent')
-</div>
-@endif

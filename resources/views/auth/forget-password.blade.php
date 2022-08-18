@@ -14,7 +14,7 @@
         @include('partials.alerts')
     </div>
 
-  <form action="{{route('auth.password.forget')}}" method="POST">
+  <form action="" method="POST">
     @csrf
     <h1>@lang('auth.forget password')</h1>
 
