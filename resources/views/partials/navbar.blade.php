@@ -24,9 +24,11 @@
 
                         @auth
                         <li><a class="user-name" role="button" aria-haspopup="true" aria-expanded="false" href="index.html">{{Auth::user()->name}}</a></li>
+                        <li><a class="logout-btn" href="{{route('auth.logout')}}">@lang('auth.logout')</a></li>
+                        @can('show panel')
                         <li><a href="{{route('users.index')}}">@lang('users.show')</a></li>
                         <li><a class="" href="{{route('roles.index')}}">@lang('users.show roles')</a></li>
-                        <li><a class="logout-btn" href="{{route('auth.logout')}}">@lang('auth.logout')</a></li>
+                        @endcan
                         @endauth
 
 					</ul>

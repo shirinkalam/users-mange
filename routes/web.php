@@ -32,7 +32,7 @@ Route::prefix('auth')->namespace('Auth')->group(function () {
     Route::get('logout',[LoginController::class,'logout'])->name('auth.logout');
 });
 
-Route::prefix('panel')->group(function(){
+Route::prefix('panel')->middleware('can:show panel')->group(function(){
     Route::get('users',[UserController::class,'index'])->name('users.index');
     Route::get('users/{user}/edit',[UserController::class,'edit'])->name('users.edit');
     Route::post('users/{user}/edit',[UserController::class,'update'])->name('users.update');
